@@ -160,10 +160,36 @@ Pre-built email templates for:
 
 ### Vercel (Recommended)
 
-1. Push your code to GitHub
-2. Connect your repository to Vercel
-3. Add your environment variables
-4. Deploy!
+1. **Push your code to GitHub**
+2. **Connect your repository to Vercel**
+3. **Add your environment variables** in Vercel dashboard:
+   ```env
+   # Auth Configuration
+   BETTER_AUTH_SECRET="your-production-secret"
+   BETTER_AUTH_URL="https://your-app-domain.vercel.app"
+   NEXT_PUBLIC_APP_URL="https://your-app-domain.vercel.app"
+
+   # Database (same as development)
+   DATABASE_URL="your-production-database-url"
+
+   # Email Service (same as development)
+   RESEND_API_KEY="your-resend-api-key"
+   EMAIL_SENDER_NAME="Your App Name"
+   EMAIL_SENDER_ADDRESS="noreply@yourdomain.com"
+
+   # OAuth (update with production URLs)
+   GOOGLE_CLIENT_ID="your-production-google-client-id"
+   GOOGLE_CLIENT_SECRET="your-production-google-client-secret"
+   ```
+4. **Deploy!**
+
+### Environment Variables Setup
+
+**Important**: Update these URLs for production:
+- `BETTER_AUTH_URL` → Your actual domain
+- `NEXT_PUBLIC_APP_URL` → Your actual domain  
+- OAuth redirect URLs in Google Console → Your domain
+- Email sender domain → Your domain
 
 ### Other Platforms
 

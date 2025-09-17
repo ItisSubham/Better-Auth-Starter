@@ -11,6 +11,8 @@ import { nextCookies } from "better-auth/next-js";
 import { organization } from "better-auth/plugins";
 import { Resend } from "resend";
 import { admin, member, owner } from "./auth/permissions";
+import { lastLoginMethod } from "better-auth/plugins"
+
 
 const resend = new Resend(process.env.RESEND_API_KEY as string);
 
@@ -91,6 +93,7 @@ export const auth = betterAuth({
         member,
       },
     }),
+    lastLoginMethod(),
     nextCookies(),
   ],
 });
